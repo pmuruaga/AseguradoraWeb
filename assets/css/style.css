@@ -107,6 +107,12 @@ body{
     text-align: center;
 }
 
+section#content p {
+    text-align: left;
+    width: 80%;
+    margin-left: 10%;
+}
+
 .btn-white{
     display: block;
     color: #444;
@@ -129,4 +135,80 @@ body{
 .btn-white:hover{
     color: white;
     background: rgb(158, 223, 248);
+}
+
+.form-group {
+    display: block;
+    margin-left: -12px;
+    margin-right: -12px;
+    margin-bottom: 15px;
+}
+
+.form-group input, .form-group select{    
+    border-radius: 0!important;
+    color: #858585;
+    background-color: #FFF;
+    border: 1px solid #D5D5D5;
+    padding: 5px 4px 6px;
+    font-size: 14px;
+    font-family: inherit;
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
+    -webkit-transition-duration: .1s;
+    transition-duration: .1s;
+    width: 40%;
+    height: 35px;
+}
+
+.form-group select{
+    width: 41%;
+    height: 40px;
+}
+
+.alert{
+    font-size: 14px;
+    border-radius: 0;
+    background-color: #d9edf7;
+    border-color: #bce8f1;
+    color: #2b2b2b;
+    padding: 15px;
+    border: 1px solid transparent;
+}
+
+.precioseguro{
+    font-size: 21px;
+    color: rgb(104, 104, 104);
+    padding-top: 8px;
+}
+
+input[type="submit"].submit{
+    display: block;
+    color: #ffffff;
+    background: #4c88ab;
+    width: 42%;
+    height: 45px;
+    margin: 0px auto;
+    font-size: 18px;
+    font-transform: uppercase;
+    text-shadow: none;
+    text-decoration: none;
+    line-height: 35px;
+    box-shadow: 0px 0px 5px #ccc;
+    margin-top: 40px;
+    border-radius: 4px;
+    transition: 300ms all;
+    border: 0px;
+}
+
+input[type="submit"].submit:hover{
+    color: white;
+    background: rgb(121, 146, 194);
+}
+
+footer{
+    margin-top: 120px;
+    height: 120px;
+    width: 100%;
+    background: white;
+    border-top: 2px solid #ccc;    
 }

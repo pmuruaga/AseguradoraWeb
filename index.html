@@ -50,18 +50,85 @@
                     <a name="Contacto"><h2>Contactate y te presupuestamos tu seguro</h2></a>
                     <p>Si en una semana no te respondimos es porque nos olvidamos, podes probar llamando al 0800-555-NOPAGO</p>
                     <form action="">
-                        <label>Nombre: </label><input type="text" name="nombre" />
-                        <label>Apellido: </label><input type="text" name="apellido" />
-                        <label>DNI: </label><input type="text" name="dni" />
-                        <label>Email: </label><input type="text" name="email" />
-                        <label>Teléfono: </label><input type="text" name="telefono" />
-                        <label>Tipo de Seguro: </label>
-                        <input type="submit" name="submit" value="Enviar" />
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="nombre">Nombre:</label>
+
+                            <div class="col-sm-9">
+                                <input type="text" id="nombre" placeholder="Nombre" class="col-xs-10 col-sm-5">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="apellido">Apellido:</label>
+
+                            <div class="col-sm-9">
+                                <input type="text" id="apellido" placeholder="Apellido" class="col-xs-10 col-sm-5">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="dni">DNI:</label>
+
+                            <div class="col-sm-9">
+                                <input type="text" id="dni" placeholder="DNI" class="col-xs-10 col-sm-5">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="email">Email:</label>
+
+                            <div class="col-sm-9">
+                                <input type="email" id="email" placeholder="Email" class="col-xs-10 col-sm-5">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="telefono">Telefono:</label>
+
+                            <div class="col-sm-9">
+                                <input type="text" id="telefono" placeholder="Telefono" class="col-xs-10 col-sm-5">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label no-padding-right" for="tiposeguro">Tipo de Seguro:</label>
+
+                            <div class="col-sm-9">
+                                <select onchange="GetSelectedValue()" class="chosen-select form-control" id="tiposeguro" data-placeholder="Seleccione Tipo">
+                                    <option value="NN">--Seleccione--</option>
+                                    <option value="BA">Básico</option>
+                                    <option value="IN">Intermedio</option>
+                                    <option value="PR">Premium</option>                                    
+                                </select>                                
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div name="precioseguro" id="precioseguro" for="precioseguro">Precio: Seleccione el Tipo Seguro</div>
+                        </div>
+                        <input type="submit" name="submit" value="Enviar" onclick="javascript: EnviarConsulta();" />
                     </form>
                 </div>
-            </section>
+            </section>            
         </div>
 
-        <script src="" async defer></script>
+        <script>
+            function GetSelectedValue() {
+                var valor = document.getElementById("tiposeguro").value;
+                var precio = 0;
+                if(valor == "BA") precio=500;
+                else if(valor == "IN") precio=1000;
+                else if(valor =="PR") precio=1500;
+                else if(valor =="NN") precio=0;
+                document.getElementById("precioseguro").innerHTML = "Precio: $"+precio;                
+
+                //alert("Test" + valor);
+            }
+
+            function EnviarConsulta(){
+                var nombre = document.getElementById("nombre").value;
+                var apellido = document.getElementById("apellido").value;
+                var telefono = document.getElementById("telefono").value;
+                var email = document.getElementById("email").value;
+                var dni = document.getElementById("dni").value;
+                var tipoSeguro = document.getElementById("tiposeguro").value;
+                alert("Enviando...\n" + nombre + " / " + apellido + " / " + dni + " / " + telefono + " / " + email + " / " + tipoSeguro);
+            }
+        </script>
     </body>
 </html>
